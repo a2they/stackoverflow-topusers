@@ -12,6 +12,7 @@ struct ProfileDetailView: View {
     
     var body: some View {
         let profile = viewModel.profile
+        let faceResult = viewModel.faceDetectionResult
         VStack(alignment: .center) {
             if let image = viewModel.imageLoader.image {
                 Image(uiImage: image)
@@ -19,6 +20,17 @@ struct ProfileDetailView: View {
                     .cornerRadius(10)
                     .onAppear {
                         viewModel.performFaceDetection()
+                    }
+                    .overlay {
+                        if let faceBounds = faceResult?.faceBounds {
+                            GeometryReader { geo in
+                                // Draw green rectangle around the face
+                                Rectangle()
+                                    .stroke(Color.green, lineWidth: 1)
+                                    .frame(width: faceBounds.width, height: faceBounds.height)
+                                    .offset(x: faceBounds.origin.x, y: faceBounds.origin.y)
+                            }
+                        }
                     }
             } else {
                 ProgressView().onAppear {
@@ -46,11 +58,11 @@ struct ProfileDetailView: View {
                 .font(.headline)
                 .padding(.top, 20)
             
-            if let faceDetectionResult = viewModel.faceDetectionResult {
-                Text("Face Detected: \(faceDetectionResult.faceDetected ? "Yes" : "No")")
-                Text("Face Bounds: \(faceDetectionResult.faceBounds?.debugDescription ?? "N/A")")
+            if let faceResult {
+                Text("Face Detected: \(faceResult.faceDetected ? "Yes" : "No")")
+                Text("Face Bounds: \(faceResult.faceBounds?.debugDescription ?? "N/A")")
             } else {
-                Text("Face Detection Result: In Progress...")
+                Text("Face Detection: In Progress...")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
