@@ -13,13 +13,34 @@ struct ProfileListView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let error = viewModel.error {
+                if error is StackoverflowAPIError {
+                    Text("Error: something went wrong interacting with stackoverflow.")
+                } else {
+                    Text("Error: \(error)")
+                }
+            } else {
+                NavigationView {
+                    List {
+                        ForEach(viewModel.profiles) { profile in
+                            NavigationLink {
+                                // todo detail view here
+                            } label: {
+                                Text("Display Name: \(profile.displayName)")
+                            }
+                        }
+                    }
+                    .navigationTitle("Top Users")
+                }
+            }
         }
-        .padding()
+        .onAppear {
+            viewModel.fetchProfiles()
+        }
     }
+        
 }
 
 #Preview {
