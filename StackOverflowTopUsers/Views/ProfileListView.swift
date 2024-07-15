@@ -27,7 +27,7 @@ struct ProfileListView: View {
                         ForEach(viewModel.profiles) { profile in
                             let imageLoader = ImageLoader()
                             NavigationLink {
-                                // todo detail view here
+                                ProfileDetailView(viewModel: ProfileDetailViewModel(profile: profile, imageLoader: imageLoader))
                             } label: {
                                 ProfileRowView(profile: profile, imageLoader: imageLoader)
                             }
