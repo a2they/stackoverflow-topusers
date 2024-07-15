@@ -1,4 +1,4 @@
-# Stack Overflow User Face Detection App
+# Stack Overflow - Top Users App
 
 ## Objective
 
