@@ -25,10 +25,11 @@ struct ProfileListView: View {
                 NavigationView {
                     List {
                         ForEach(viewModel.profiles) { profile in
+                            let imageLoader = ImageLoader()
                             NavigationLink {
                                 // todo detail view here
                             } label: {
-                                Text("Display Name: \(profile.displayName)")
+                                ProfileRowView(profile: profile, imageLoader: imageLoader)
                             }
                         }
                     }

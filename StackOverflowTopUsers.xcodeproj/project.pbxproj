@@ -11,6 +11,8 @@
 		5525A05C2C44CBC2006B14FC /* ProfileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525A05B2C44CBC2006B14FC /* ProfileListViewModel.swift */; };
 		5525A05E2C44CBCB006B14FC /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525A05D2C44CBCB006B14FC /* UserProfile.swift */; };
 		5525A0602C44CBD8006B14FC /* StackOverflowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525A05F2C44CBD8006B14FC /* StackOverflowService.swift */; };
+		5525A0622C44D34F006B14FC /* ProfileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525A0612C44D34F006B14FC /* ProfileRowView.swift */; };
+		5525A0642C44D368006B14FC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525A0632C44D368006B14FC /* ImageLoader.swift */; };
 		5580BE692C44CA1B006AFDC6 /* StackOverflowTopUsersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5580BE682C44CA1B006AFDC6 /* StackOverflowTopUsersApp.swift */; };
 		5580BE6D2C44CA1C006AFDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5580BE6C2C44CA1C006AFDC6 /* Assets.xcassets */; };
 		5580BE702C44CA1C006AFDC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5580BE6F2C44CA1C006AFDC6 /* Preview Assets.xcassets */; };
@@ -21,6 +23,8 @@
 		5525A05B2C44CBC2006B14FC /* ProfileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewModel.swift; sourceTree = "<group>"; };
 		5525A05D2C44CBCB006B14FC /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		5525A05F2C44CBD8006B14FC /* StackOverflowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowService.swift; sourceTree = "<group>"; };
+		5525A0612C44D34F006B14FC /* ProfileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRowView.swift; sourceTree = "<group>"; };
+		5525A0632C44D368006B14FC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5580BE652C44CA1B006AFDC6 /* StackOverflowTopUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowTopUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5580BE682C44CA1B006AFDC6 /* StackOverflowTopUsersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowTopUsersApp.swift; sourceTree = "<group>"; };
 		5580BE6C2C44CA1C006AFDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				5525A0572C44CB9A006B14FC /* ProfileListView.swift */,
+				5525A0612C44D34F006B14FC /* ProfileRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -66,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				5525A05F2C44CBD8006B14FC /* StackOverflowService.swift */,
+				5525A0632C44D368006B14FC /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5525A0642C44D368006B14FC /* ImageLoader.swift in Sources */,
 				5525A0582C44CB9A006B14FC /* ProfileListView.swift in Sources */,
+				5525A0622C44D34F006B14FC /* ProfileRowView.swift in Sources */,
 				5525A05E2C44CBCB006B14FC /* UserProfile.swift in Sources */,
 				5525A05C2C44CBC2006B14FC /* ProfileListViewModel.swift in Sources */,
 				5525A0602C44CBD8006B14FC /* StackOverflowService.swift in Sources */,

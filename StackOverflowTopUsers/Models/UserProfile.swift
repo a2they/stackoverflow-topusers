@@ -29,4 +29,8 @@ struct UserProfile: Codable, Identifiable {
         self.displayName = displayName
         self.location = location
     }
+    
+    static func example() -> UserProfile {
+        return UserProfile(id: 12345, reputation: 100000, profileImage: "https://avatars.githubusercontent.com/u/15901479?v=4", displayName: "Andrey", location: "Toronto, Canada")
+    }
 }
