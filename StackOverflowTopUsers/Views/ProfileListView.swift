@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ProfileListView.swift
 //  StackOverflowTopUsers
 //
 //  Created by Andrey Leonov on 2024-07-14.
@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ProfileListView: View {
+    
+    @ObservedObject var viewModel: ProfileListViewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +23,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ProfileListView(viewModel: ProfileListViewModel())
 }

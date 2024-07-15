@@ -11,7 +11,7 @@ import SwiftUI
 struct StackOverflowTopUsersApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileListView(viewModel: ProfileListViewModel())
         }
     }
 }
