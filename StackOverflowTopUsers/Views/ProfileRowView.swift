@@ -9,6 +9,7 @@ import SwiftUI
 
 import UIKit
 
+/// A view for each profile in the profile list view
 struct ProfileRowView: View {
     
     let profile: UserProfile

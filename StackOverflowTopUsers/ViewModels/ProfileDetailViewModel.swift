@@ -10,11 +10,16 @@ import Foundation
 import SwiftUI
 
 class ProfileDetailViewModel: ObservableObject {
+    /// Profile from StackOverflow
     let profile: UserProfile
+    /// Loads profile image and caches
     let imageLoader: ImageLoader
     
+    /// Set when face processing model is running
     @Published var isProcessingFace: Bool = false
+    /// Result of face processing
     @Published var faceDetectionResult: FaceDetectionResult?
+    /// Error of face processing
     @Published var processingFaceError: FaceDetectionService.FaceDetectionError?
     
     private let faceDetectionService: FaceDetectionService
@@ -31,6 +36,7 @@ class ProfileDetailViewModel: ObservableObject {
             processingFaceError = .invalidImage
             return
         }
+        guard !isProcessingFace else { return }
         isProcessingFace = true
         cancellationToken = faceDetectionService.detectFace(image: image) { [weak self] result in
             guard let self = self else { return }

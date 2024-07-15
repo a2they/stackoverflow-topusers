@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Detail view for profile. This automatically runs face detection model on the profile photo when view appears.
 struct ProfileDetailView: View {
     @ObservedObject var viewModel: ProfileDetailViewModel
     

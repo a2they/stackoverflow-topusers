@@ -8,8 +8,11 @@
 import Foundation
 
 class ProfileListViewModel: ObservableObject {
+    /// StackOverflow profiles
     @Published var profiles: [UserProfile] = []
+    /// Set when profiles are being loaded
     @Published var isLoading: Bool = false
+    /// Any error during profiles fetch
     @Published var error: Error?
     
     private let stackOverflowService: StackOverflowService

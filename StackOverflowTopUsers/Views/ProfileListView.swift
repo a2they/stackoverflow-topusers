@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// List view to show profile photo and display name
 struct ProfileListView: View {
     
     @ObservedObject var viewModel: ProfileListViewModel
